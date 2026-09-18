@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>E1EГTROHNKA - Hoglet (v0.0.3)</title>
+    <!-- Исправлено: заменен символ в конце тега link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-console">
+        <!-- Главное название консоли сверху корпуса -->
+        <h1 class="console-title"> E1EГTROHNKA - Hoglet</h1>
+
+         <!-- Левая панель управления (Кнопки уровней и левые стрелки) -->
+        <div class="side-panel left-panel">
+            <div class="mode-buttons-vertical">
+                <button class="mode-btn" onclick="switchDifficulty('A')">ИГРА A</button> 
+                <button class="mode-btn" onclick="switchDifficulty('B')">ИГРА Б</button>
+            </div>
+            <div class="arrow-buttons-stack">
+                <!-- Исправлено: внутри кнопок теперь обычные текстовые стрелки UTF-8, которые не сломают пиксельный стиль -->
+                <button class="btn btn-left-top" onclick="moveHedgehog('left-top')">↖️</button>
+                <!-- Исправлено: заменена вертикальная черта на круглую скобку -->
+                <button class="btn btn-left-bottom" onclick="moveHedgehog('left-bottom')">↙️</button>
+            </div>
+        </div>
+
+        <!-- Центральный ЖК-экран -->
+        <!-- Исправлено: класс lcd-screen теперь написан через правильную букву "l" -->
+        <div class="lcd-screen">
+            <div id="gameModeDisplay">ИГРА A</div>
+            <div id="score"> 000</div>
+            <div id="misses"></div>
+
+            <canvas id="gameCanvas" width="400" height="250"></canvas>
+
+            <div class="game-version"> v0.0.3</div>
+        </div>
+
+        <!-- Правая панель управления (Правые стрелки) -->
+        <div class="side-panel right-panel">
+            <div class="arrow-buttons-stack">
+                <!-- Исправлено: заменена вертикальная черта на круглую скобку в обоих обработчиках -->
+                <button class="btn btn-right-top" onclick="moveHedgehog('right-top')">↗️</button>
+                <button class="btn btn-right-bottom" onclick="moveHedgehog('right-bottom')">↘️</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

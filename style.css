@@ -1,0 +1,134 @@
+﻿body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    user-select: none;
+    font-family: 'Courier New', monospace;
+}
+
+/* Широкий корпус консоли */
+.game-console {
+    background: #ccc;
+    width: 640px; 
+    height: 360px; 
+    border-radius: 20px;
+    position: relative;
+    box-shadow: inset -5px -5px 10px #777, inset 5px 5px 10px #fff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Главное название сверху по центру корпуса */
+.console-title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* ЖК-экран строго по центру */
+.lcd-screen {
+    background: #a3b19b;
+    width: 400px;
+    height: 250px;
+    border: 6px solid #444;
+    position: relative;
+    margin-top: 25px; 
+}
+
+/* Общие стили для левой и правой панели на корпусе */
+.side-panel {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Исправлено: удалены скрытые символы */
+.left-panel {
+    left: 15px; 
+    top: 50px; 
+    justify-content: space-between;
+}
+
+.right-panel {
+    right: 25px; 
+    top: 135px;
+}
+
+/* Вертикальный стек узких темно-серых кнопок выбора уровней */
+.mode-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: -25px; 
+}
+
+.mode-btn {
+    background: #444;
+    color: #fff;
+    border: 1px solid #222; /* Исправлен пробел */
+    padding: 5px 2px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 70px;
+    text-align: center;
+    box-shadow: 1px 1px 2px #555;
+}
+
+.mode-btn:active { /* Исправлена опечатка в названии класса */
+    background: #222;
+    box-shadow: inset 1px 1px 2px #000;
+}
+
+/* Вертикальный ряд красных круглых игровых кнопок */
+.arrow-buttons-stack { /* Исправлено: удален скрытый символ */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.btn { /* Исправлено: удален скрытый символ */
+    width: 46px;
+    height: 46px;
+    background: #e74c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #555;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active {
+    box-shadow: inset 2px 2px 4px #555; 
+}
+
+/* Точный разворот стрелочек */
+.btn-left-top { transform: rotate(0deg); }
+.btn-left-bottom { transform: rotate(-90deg); }
+.btn-right-top { transform: rotate(90deg); }
+.btn-right-bottom { transform: rotate(180deg); }
+
+/* Интерфейс внутри ЖК-экрана */
+#score { position: absolute; top: 10px; right: 15px; font-size: 24px; font-weight: bold; }
+#gameModeDisplay { position: absolute; top: 10px; left: 15px; font-size: 18px; font-weight: bold; }
+#misses { position: absolute; top: 35px; right: 15px; font-size: 14px; }
+
+.game-version { position: absolute; bottom: 5px; right: 8px; font-size: 9px; color: #222; opacity: 0.6; }
